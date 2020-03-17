@@ -20,8 +20,12 @@ public final class Main {
       appContext = new ClassPathXmlApplicationContext("classpath:spring/mesBeans.xml");
       // Récupération de notre instance de client
       Client cl1 = (Client) appContext.getBean("monId");
+      Client cl2 = (Client) appContext.getBean("client2");
+      Client cl3 = (Client) appContext.getBean("client3");
       // Affichage
       Main.LOG.debug(cl1.toString());
+      Main.LOG.debug(cl2.toString());
+      Main.LOG.debug(cl3.toString());
     } catch (Exception e) {
       Main.LOG.fatal("Erreur", e);
       System.exit(-1);

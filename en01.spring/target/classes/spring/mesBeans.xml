@@ -5,10 +5,45 @@
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 <!-- Declarez vos bean ici -->
+	<!--  Bean adresses -->
+	<bean id="monAdresse" class="com.exo.Adresse">
+		<property name="codePostal" value="59700"/>
+		<property name="rue" value="Albert Bailly"/>
+		<property name="ville" value="Marcq en Baroeul"/>
+		<property name="pays" value="France"/>
+	</bean>
+	<bean id="adresse2" class="com.exo.Adresse">
+		<constructor-arg index="0" value="84918"/>
+		<constructor-arg index="1" value="de la Pinède"/>
+		<constructor-arg index="2" value="Avignon"/>
+		<constructor-arg index="3" value="France"/>
+	</bean>
+	
+	<!-- Bean clients -->
 	<bean id="monId" class="com.exo.Client">
 		<property name="nom" value="Alloin"/>
 		<property name="prenom" value="Adele"/>
 		<property name="age" value="27"/>
+		<property name="adresse" ref="monAdresse"/>
+	</bean>
+	<bean id="client2" class="com.exo.Client">
+		<property name="nom" value="Claudel"/>
+		<property name="prenom" value="Camille"/>
+		<property name="age" value="35"/>
+		<property name="adresse" ref="adresse2"/>
+	</bean>
+	<bean id="client3" class="com.exo.Client">
+		<property name="nom" value="Rodin"/>
+		<property name="prenom" value="Auguste"/>
+		<property name="age" value="35"/>
+		<property name="adresse">
+			<bean id="adresse2" class="com.exo.Adresse">
+				<constructor-arg index="0" value="84918"/>
+				<constructor-arg index="1" value="de la Pinède"/>
+				<constructor-arg index="2" value="Avignon"/>
+				<constructor-arg index="3" value="France"/>
+			</bean>
+		</property>
 	</bean>
 	
 </beans>
