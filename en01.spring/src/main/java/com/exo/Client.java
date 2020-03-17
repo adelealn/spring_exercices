@@ -1,21 +1,23 @@
 package com.exo;
 
+import java.util.List;
+
 public class Client {
 
 	private String nom, prenom;
 	private Integer age;
-	private Adresse adresse;
+	private java.util.List<Adresse> adresses;
 	
 	public Client() {
 		
 	}
 	
 	
-	public Client(String nom, String prenom, Integer age, Adresse adresse) {
+	public Client(String nom, String prenom, Integer age, java.util.List<Adresse> adresses) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.age = age;
-		this.adresse = adresse;
+		this.adresses = adresses;
 	}
 
 
@@ -37,17 +39,17 @@ public class Client {
 	public void setAge(Integer age) {
 		this.age = age;
 	}
-	public Adresse getAdresse() {
-		return adresse;
+	public java.util.List<Adresse> getAdresses() {
+		return adresses;
 	}
-	public void setAdresse(Adresse adresse) {
-		this.adresse = adresse;
+	public void setAdresses(java.util.List<Adresse> adresses) {
+		this.adresses = adresses;
 	}
 
 
 	@Override
 	public String toString() {
-		return "Client [nom= " + nom + ", prenom= " + prenom + ", age= " + age +", "+ adresse +"]";
+		return "Client [nom= " + nom + ", prenom= " + prenom + ", age= " + age +", "+ adresses.toString() +"]";
 	}
 	
 	

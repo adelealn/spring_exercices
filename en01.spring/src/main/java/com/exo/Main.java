@@ -26,6 +26,12 @@ public final class Main {
       Main.LOG.debug(cl1.toString());
       Main.LOG.debug(cl2.toString());
       Main.LOG.debug(cl3.toString());
+      // Teste si les adresses sont de type ArrayList
+//      if (cl1.getAdresses() instanceof java.util.ArrayList) {
+//    	  System.out.println("Les adresses sont de type ArrayList");
+//      } else {
+//    	  System.out.println("Les adresses ne sont pas de type ArrayList");
+//      }
     } catch (Exception e) {
       Main.LOG.fatal("Erreur", e);
       System.exit(-1);
@@ -35,7 +41,10 @@ public final class Main {
         appContext.close();
       }
     }
+    
     Main.LOG.debug("-- Fin -- ");
     System.exit(0);
+    
+    
   }
 }

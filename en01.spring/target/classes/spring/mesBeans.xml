@@ -6,13 +6,25 @@
 
 <!-- Declarez vos bean ici -->
 	<!--  Bean adresses -->
-	<bean id="monAdresse" class="com.exo.Adresse">
+	<bean id="monAdresse1" class="com.exo.Adresse">
 		<property name="codePostal" value="59700"/>
 		<property name="rue" value="Albert Bailly"/>
 		<property name="ville" value="Marcq en Baroeul"/>
 		<property name="pays" value="France"/>
 	</bean>
-	<bean id="adresse2" class="com.exo.Adresse">
+	<bean id="monAdresse2" class="com.exo.Adresse">
+		<property name="codePostal" value="61170"/>
+		<property name="rue" value="des Limousines"/>
+		<property name="ville" value="Montchevrel"/>
+		<property name="pays" value="France"/>
+	</bean>
+	<bean id="monAdresse3" class="com.exo.Adresse">
+		<property name="codePostal" value="75005"/>
+		<property name="rue" value="Cardinal Lemoine"/>
+		<property name="ville" value="Paris"/>
+		<property name="pays" value="France"/>
+	</bean>
+	<bean id="adresse1" class="com.exo.Adresse">
 		<constructor-arg index="0" value="84918"/>
 		<constructor-arg index="1" value="de la Pinède"/>
 		<constructor-arg index="2" value="Avignon"/>
@@ -24,23 +36,32 @@
 		<property name="nom" value="Alloin"/>
 		<property name="prenom" value="Adele"/>
 		<property name="age" value="27"/>
-		<property name="adresse" ref="monAdresse"/>
+		<property name="adresses">
+			<list>
+				<ref bean="monAdresse1"/>
+				<ref bean="monAdresse2"/>
+			</list>
+		</property>
 	</bean>
 	<bean id="client2" class="com.exo.Client">
 		<property name="nom" value="Claudel"/>
 		<property name="prenom" value="Camille"/>
 		<property name="age" value="35"/>
-		<property name="adresse" ref="adresse2"/>
+		<property name="adresses">
+			<list>
+				<ref bean="adresse1"/>
+			</list>
+		</property>
 	</bean>
 	<bean id="client3" class="com.exo.Client">
 		<property name="nom" value="Rodin"/>
 		<property name="prenom" value="Auguste"/>
 		<property name="age" value="35"/>
-		<property name="adresse">
+		<property name="adresses">
 			<bean id="adresse2" class="com.exo.Adresse">
-				<constructor-arg index="0" value="84918"/>
-				<constructor-arg index="1" value="de la Pinède"/>
-				<constructor-arg index="2" value="Avignon"/>
+				<constructor-arg index="0" value="75018"/>
+				<constructor-arg index="1" value="la Fayette"/>
+				<constructor-arg index="2" value="Paris"/>
 				<constructor-arg index="3" value="France"/>
 			</bean>
 		</property>
